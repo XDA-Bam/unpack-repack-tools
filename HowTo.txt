@@ -1,0 +1,32 @@
+So here is the "HOWTO" to explain what you have to do for unpack/repack normalboot.img.
+
+You need Linux to do this (also a visrtualized distro).
+
+1- download and unzip the attached file;
+2- place the normalboot.img file into the tools folder;
+3- go in the root folder and do:
+Code:
+
+./unpack-all.sh
+
+4- now you have succesfull unpacked your file. You can find the zImage file in the "kernel" folder and the ramdisk files in the "ramdisk" folder.
+
+Basically now you can do all that you want. If you have a custom kernel overwrite the zImage file with your. If you want edit the ramdisk go in the folder called "ramdisk" and mod what you want.
+
+When you finished do:
+
+Code:
+
+./create_boot.img.sh
+
+Now you will find the .tar file ready to be flashed on your phone with odin.
+
+If you are asking yourself "where can i find normalboot.img file?" the answers are:
+
+1- into the PDA.tar of your Firmware;
+2- dump it from the phone with:
+Code:
+
+dd if=/dev/block/bml7 of=/sdcard/normalboot.img
+
+
